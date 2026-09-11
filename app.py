@@ -166,11 +166,11 @@ async def translate(file: UploadFile = File(...)):
         - Do NOT include full document wrappers like \\documentclass{article}, \\usepackage{...}, or \\begin{document}. Output only the content itself.
         - Do NOT include markdown fence wrappers like ```latex in your output.
         
-        
         Return ONLY the decoded English text formatted in clean LaTeX math blocks.
         """
 
-        candidate_models = ["gemini-3.6-flash", "gemini-1.5-flash", "gemini-1.5-pro"]
+        # Fixed candidate models using active supported endpoints
+        candidate_models = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-2.5-pro"]
         
         last_error = None
         for model in candidate_models:
